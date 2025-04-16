@@ -1,0 +1,169 @@
+{
+  "format-version" : 2,
+  "table-uuid" : "34234bfe-e5e2-4590-80ef-461ec6e309b5",
+  "location" : "spark-warehouse/iceberg/carro_iceberg",
+  "last-sequence-number" : 3,
+  "last-updated-ms" : 1744780885967,
+  "last-column-id" : 5,
+  "current-schema-id" : 1,
+  "schemas" : [ {
+    "type" : "struct",
+    "schema-id" : 0,
+    "fields" : [ {
+      "id" : 1,
+      "name" : "id",
+      "required" : false,
+      "type" : "int"
+    }, {
+      "id" : 2,
+      "name" : "placa",
+      "required" : false,
+      "type" : "string"
+    } ]
+  }, {
+    "type" : "struct",
+    "schema-id" : 1,
+    "fields" : [ {
+      "id" : 1,
+      "name" : "id",
+      "required" : false,
+      "type" : "int"
+    }, {
+      "id" : 2,
+      "name" : "placa",
+      "required" : false,
+      "type" : "string"
+    }, {
+      "id" : 3,
+      "name" : "marca",
+      "required" : false,
+      "type" : "string"
+    }, {
+      "id" : 4,
+      "name" : "modelo",
+      "required" : false,
+      "type" : "string"
+    }, {
+      "id" : 5,
+      "name" : "ano",
+      "required" : false,
+      "type" : "int"
+    } ]
+  } ],
+  "default-spec-id" : 0,
+  "partition-specs" : [ {
+    "spec-id" : 0,
+    "fields" : [ ]
+  } ],
+  "last-partition-id" : 999,
+  "default-sort-order-id" : 0,
+  "sort-orders" : [ {
+    "order-id" : 0,
+    "fields" : [ ]
+  } ],
+  "properties" : {
+    "owner" : "bonetti",
+    "write.parquet.compression-codec" : "zstd"
+  },
+  "current-snapshot-id" : 2190483639890695013,
+  "refs" : {
+    "main" : {
+      "snapshot-id" : 2190483639890695013,
+      "type" : "branch"
+    }
+  },
+  "snapshots" : [ {
+    "sequence-number" : 1,
+    "snapshot-id" : 8057911865820506576,
+    "timestamp-ms" : 1744780878973,
+    "summary" : {
+      "operation" : "append",
+      "spark.app.id" : "local-1744780868545",
+      "added-data-files" : "3",
+      "added-records" : "3",
+      "added-files-size" : "1924",
+      "changed-partition-count" : "1",
+      "total-records" : "3",
+      "total-files-size" : "1924",
+      "total-data-files" : "3",
+      "total-delete-files" : "0",
+      "total-position-deletes" : "0",
+      "total-equality-deletes" : "0"
+    },
+    "manifest-list" : "spark-warehouse/iceberg/carro_iceberg/metadata/snap-8057911865820506576-1-0f4bb5be-bc94-419d-ab5e-32b60270695d.avro",
+    "schema-id" : 0
+  }, {
+    "sequence-number" : 2,
+    "snapshot-id" : 3050214896699544743,
+    "parent-snapshot-id" : 8057911865820506576,
+    "timestamp-ms" : 1744780885017,
+    "summary" : {
+      "operation" : "overwrite",
+      "spark.app.id" : "local-1744780868545",
+      "added-data-files" : "1",
+      "deleted-data-files" : "1",
+      "added-records" : "1",
+      "deleted-records" : "1",
+      "added-files-size" : "1401",
+      "removed-files-size" : "642",
+      "changed-partition-count" : "1",
+      "total-records" : "3",
+      "total-files-size" : "2683",
+      "total-data-files" : "3",
+      "total-delete-files" : "0",
+      "total-position-deletes" : "0",
+      "total-equality-deletes" : "0"
+    },
+    "manifest-list" : "spark-warehouse/iceberg/carro_iceberg/metadata/snap-3050214896699544743-1-a77ff462-c9f9-4c54-abb8-d10f600d044d.avro",
+    "schema-id" : 1
+  }, {
+    "sequence-number" : 3,
+    "snapshot-id" : 2190483639890695013,
+    "parent-snapshot-id" : 3050214896699544743,
+    "timestamp-ms" : 1744780885967,
+    "summary" : {
+      "operation" : "overwrite",
+      "spark.app.id" : "local-1744780868545",
+      "added-data-files" : "1",
+      "deleted-data-files" : "1",
+      "added-records" : "1",
+      "deleted-records" : "1",
+      "added-files-size" : "1366",
+      "removed-files-size" : "642",
+      "changed-partition-count" : "1",
+      "total-records" : "3",
+      "total-files-size" : "3407",
+      "total-data-files" : "3",
+      "total-delete-files" : "0",
+      "total-position-deletes" : "0",
+      "total-equality-deletes" : "0"
+    },
+    "manifest-list" : "spark-warehouse/iceberg/carro_iceberg/metadata/snap-2190483639890695013-1-99d3836f-1fd3-4cdf-ba08-16320b133d91.avro",
+    "schema-id" : 1
+  } ],
+  "statistics" : [ ],
+  "partition-statistics" : [ ],
+  "snapshot-log" : [ {
+    "timestamp-ms" : 1744780878973,
+    "snapshot-id" : 8057911865820506576
+  }, {
+    "timestamp-ms" : 1744780885017,
+    "snapshot-id" : 3050214896699544743
+  }, {
+    "timestamp-ms" : 1744780885967,
+    "snapshot-id" : 2190483639890695013
+  } ],
+  "metadata-log" : [ {
+    "timestamp-ms" : 1744780874758,
+    "metadata-file" : "spark-warehouse/iceberg/carro_iceberg/metadata/v1.metadata.json"
+  }, {
+    "timestamp-ms" : 1744780878973,
+    "metadata-file" : "spark-warehouse/iceberg/carro_iceberg/metadata/v2.metadata.json"
+  }, {
+    "timestamp-ms" : 1744780879937,
+    "metadata-file" : "spark-warehouse/iceberg/carro_iceberg/metadata/v3.metadata.json"
+  }, {
+    "timestamp-ms" : 1744780885017,
+    "metadata-file" : "spark-warehouse/iceberg/carro_iceberg/metadata/v4.metadata.json"
+  } ]
+}
