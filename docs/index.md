@@ -4,7 +4,7 @@ Projeto desenvolvido para demonstração do Apache Spark Local (pyspark) gravand
 
 Necessário possuir Python na versão 3.9, e Java na versão 8. Recomendado possuir sistema Linux para execução do projeto.
 
-Projeto python inicializado com o [Poetry](https://github.com/python-poetry/poetry).
+Projeto Python inicializado com o [Poetry](https://github.com/python-poetry/poetry).
 
 Comandos utilizados para setup do ambiente:
 
