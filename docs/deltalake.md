@@ -1,6 +1,6 @@
 ## Importando as dependências
 
-Para realizar as operações, precisamos importar as seguintes bibliotecas, incluindo os tipos específicos para criação das tabelas
+Para realizar as operações, precisamos importar as seguintes bibliotecas, incluindo os tipos específicos para criação das tabelas.
 
 ```python
 from pyspark.sql import SparkSession
@@ -11,7 +11,7 @@ from delta import *
 
 ## Criação da classe Spark
 
-Após importar, já podemos inicializar nossa classe Spark, que vai ser responsável por toda a manipulação nosso Data Warehouse
+Após importar, já podemos inicializar nossa classe Spark, que vai ser responsável por toda a manipulação dos dados.
 
 
 ```python
@@ -28,9 +28,9 @@ spark = (
 
 ## Criação da base de dados
 
-Nessa etapa, em **data** estamos criando a injeção inicial de dados para facilizar a manipulação futuramente
+Nessa etapa, em **data** estamos criando a injeção inicial de dados para facilizar a manipulação futuramente.
 
-Em **Schema**, declaramos a estrutura que vai compor o nosso Data Warehouse
+Em **Schema**, declaramos a estrutura que vai compor o nosso projeto.
 
 ```python
 data = [
@@ -57,7 +57,7 @@ df.show(truncate=False)
 
 ## Salvando o DataFrame no formato Delta
 
-Após definir a estrtura e os dados inicias, vamos salvar o DataFrame no formato Delta, configurar para que os dados sejam sobrescritos, e informar onde os dados devem ser salvos
+Após definir a estrutura e os dados inicias, vamos salvar o DataFrame no formato Delta, configurar para que os dados sejam sobrescritos, e informar onde os dados devem ser salvos.
 
 ```python
 ( 
@@ -71,7 +71,7 @@ Após definir a estrtura e os dados inicias, vamos salvar o DataFrame no formato
 
 ## INSERT
 
-Definição dos novos dados a serem inseridos
+Definição dos novos dados a serem inseridos.
 
 ```python
 new_data = [
@@ -85,7 +85,7 @@ df_new = spark.createDataFrame(data=new_data, schema=schema)
 deltaTable = DeltaTable.forPath(spark, "./data/PRODUTOS")
 ```
 
-Operação de marge entra o DataFrame já existente, e o criado acima
+Operação de marge entra o DataFrame já existente, e o criado acima.
 
 ```python
 (
@@ -102,7 +102,7 @@ Operação de marge entra o DataFrame já existente, e o criado acima
 
 ## DELETE
 
-Operação de deletar com base no ID do produto
+Operação de deletar com base no ID do produto.
 
 ```python
 deltaTable.delete("ID_PRODUTO = 4")
@@ -110,7 +110,7 @@ deltaTable.delete("ID_PRODUTO = 4")
 
 ## UPDATE
 
-Operação de atualizar o preço produto com base no seu ID
+Operação de atualizar o preço do produto com base no seu ID.
 
 ```python
 deltaTable.update("ID_PRODUTO = 2", set = { "PRECO_PRODUTO": "400.00" })

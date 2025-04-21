@@ -1,6 +1,6 @@
 ## Importando as dependências
 
-Para realizar as operações, precisamos importar a seguinte bibliotecas
+Para realizar as operações, precisamos importar a seguinte biblioteca.
 
 ```python
 from pyspark.sql import SparkSession
@@ -8,7 +8,7 @@ from pyspark.sql import SparkSession
 
 ## Criação da classe Spark
 
-Após importar, já podemos inicializar nossa classe Spark, que vai ser responsável por toda a manipulação dos nossos dados
+Após importar, já podemos inicializar nossa classe Spark, que vai ser responsável por toda a manipulação dos nossos dados.
 
 
 ```python
@@ -22,7 +22,7 @@ spark = SparkSession.builder \
   .getOrCreate()
 ```
 
-Conforme será mostrado, toda a manipulação é feita através de comandos SQL
+Conforme será mostrado, toda a manipulação é feita através de comandos SQL.
 
 ## Criação da base de dados
 
@@ -45,7 +45,7 @@ spark.sql('''INSERT INTO local.PRODUTOS VALUES
 
 ## DELETE
 
-Operação de deletar com base no ID do produto
+Operação de deletar com base no ID do produto.
 
 ```python
 spark.sql('delete from local.PRODUTOS where ID_PRODUTO = 3')
@@ -53,7 +53,7 @@ spark.sql('delete from local.PRODUTOS where ID_PRODUTO = 3')
 
 ## UPDATE
 
-Operação de atualizar o preço produto com base no seu ID
+Operação de atualizar o preço do produto com base no seu ID.
 
 ```python
 spark.sql(
