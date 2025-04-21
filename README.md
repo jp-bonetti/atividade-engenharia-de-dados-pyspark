@@ -18,3 +18,5 @@ jupyter-lab
 Os exemplos de código pyspark/python para instanciar o Spark, bem como criar e manipular uma tabela Apache Iceberg e Apache Delta Lake, estão no arquivo `iceberg.ipynb` e `delta-lake.ipynb`, respectivamente.
 
 A cada nova execução dos notebooks, apague a pasta data.
+
+Documentação MKDocs disponível em: https://jp-bonetti.github.io/atividade-engenharia-de-dados-pyspark/
