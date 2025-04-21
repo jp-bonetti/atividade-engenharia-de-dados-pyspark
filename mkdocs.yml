@@ -1,0 +1,10 @@
+site_name: PySpark + Delta Lake | Iceberg
+site_description: Projeto desenvolvido para fins de estudos no mundo do Data Warehouse
+site_author: João Paulo Sigieski Bonetti
+theme:
+  name: material
+  language: pt-BR
+nav:
+  - Sobre o projeto: index.md
+  - Delta Lake: deltalake.md
+  - Iceberg: iceberg.md
