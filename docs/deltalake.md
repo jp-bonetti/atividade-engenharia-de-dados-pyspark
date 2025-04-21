@@ -30,7 +30,7 @@ spark = (
 
 Nessa etapa, em **data** estamos criando a injeção inicial de dados para facilizar a manipulação futuramente.
 
-Em **Schema**, declaramos a estrutura que vai compor o nosso projeto.
+Em **schema**, declaramos a estrutura que vai compor o nosso projeto.
 
 ```python
 data = [
