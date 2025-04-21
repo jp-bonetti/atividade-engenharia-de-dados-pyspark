@@ -462,11 +462,11 @@
   <h1>Iceberg</h1>
 
 <h2 id="importando-as-dependencias">Importando as dependências</h2>
-<p>Para realizar as operações, precisamos importar a seguinte bibliotecas</p>
+<p>Para realizar as operações, precisamos importar a seguinte biblioteca.</p>
 <pre><code class="language-python">from pyspark.sql import SparkSession
 </code></pre>
 <h2 id="criacao-da-classe-spark">Criação da classe Spark</h2>
-<p>Após importar, já podemos inicializar nossa classe Spark, que vai ser responsável por toda a manipulação dos nossos dados</p>
+<p>Após importar, já podemos inicializar nossa classe Spark, que vai ser responsável por toda a manipulação dos nossos dados.</p>
 <pre><code class="language-python">spark = SparkSession.builder \
   .appName(&quot;IcebergLocalDevelopment&quot;) \
   .config('spark.jars.packages', 'org.apache.iceberg:iceberg-spark-runtime-3.4_2.12:1.5.0') \
@@ -476,7 +476,7 @@
   .config(&quot;spark.sql.catalog.local.warehouse&quot;, &quot;data/spark-warehouse/iceberg&quot;) \
   .getOrCreate()
 </code></pre>
-<p>Conforme será mostrado, toda a manipulação é feita através de comandos SQL</p>
+<p>Conforme será mostrado, toda a manipulação é feita através de comandos SQL.</p>
 <h2 id="criacao-da-base-de-dados">Criação da base de dados</h2>
 <pre><code class="language-python">spark.sql(
   &quot;&quot;&quot;
@@ -491,11 +491,11 @@
     (3, &quot;PRODUTO_Z&quot;,&quot;MARCA_Z&quot;, &quot;CATEGORIA_Z&quot;, 150.00, 150)''')
 </code></pre>
 <h2 id="delete">DELETE</h2>
-<p>Operação de deletar com base no ID do produto</p>
+<p>Operação de deletar com base no ID do produto.</p>
 <pre><code class="language-python">spark.sql('delete from local.PRODUTOS where ID_PRODUTO = 3')
 </code></pre>
 <h2 id="update">UPDATE</h2>
-<p>Operação de atualizar o preço produto com base no seu ID</p>
+<p>Operação de atualizar o preço do produto com base no seu ID.</p>
 <pre><code class="language-python">spark.sql(
     &quot;&quot;&quot;
     update local.PRODUTOS set ANO_FABRICACAO_PRODUTO = '2023' where ID_PRODUTO = 3

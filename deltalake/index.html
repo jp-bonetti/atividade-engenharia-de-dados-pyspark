@@ -500,14 +500,14 @@
   <h1>Delta Lake</h1>
 
 <h2 id="importando-as-dependencias">Importando as dependências</h2>
-<p>Para realizar as operações, precisamos importar as seguintes bibliotecas, incluindo os tipos específicos para criação das tabelas</p>
+<p>Para realizar as operações, precisamos importar as seguintes bibliotecas, incluindo os tipos específicos para criação das tabelas.</p>
 <pre><code class="language-python">from pyspark.sql import SparkSession
 from pyspark.sql.types import StructType, StructField, StringType, FloatType, IntegerType
 
 from delta import *
 </code></pre>
 <h2 id="criacao-da-classe-spark">Criação da classe Spark</h2>
-<p>Após importar, já podemos inicializar nossa classe Spark, que vai ser responsável por toda a manipulação nosso Data Warehouse</p>
+<p>Após importar, já podemos inicializar nossa classe Spark, que vai ser responsável por toda a manipulação dos dados.</p>
 <pre><code class="language-python">spark = ( 
     SparkSession
     .builder
@@ -519,8 +519,8 @@ from delta import *
 )
 </code></pre>
 <h2 id="criacao-da-base-de-dados">Criação da base de dados</h2>
-<p>Nessa etapa, em <strong>data</strong> estamos criando a injeção inicial de dados para facilizar a manipulação futuramente</p>
-<p>Em <strong>Schema</strong>, declaramos a estrutura que vai compor o nosso Data Warehouse</p>
+<p>Nessa etapa, em <strong>data</strong> estamos criando a injeção inicial de dados para facilizar a manipulação futuramente.</p>
+<p>Em <strong>Schema</strong>, declaramos a estrutura que vai compor o nosso projeto.</p>
 <pre><code class="language-python">data = [
     (&quot;1&quot;, &quot;PRODUTO_X&quot;,&quot;MARCA_X&quot;, &quot;CATEGORIA_X&quot; ,800.00, 50),
     (&quot;2&quot;, &quot;PRODUTO_Y&quot;, &quot;MARCA_Y&quot;, &quot;CATEGORIA_Y&quot;, 500.00, 100),
@@ -543,7 +543,7 @@ df = spark.createDataFrame(data=data,schema=schema)
 df.show(truncate=False)
 </code></pre>
 <h2 id="salvando-o-dataframe-no-formato-delta">Salvando o DataFrame no formato Delta</h2>
-<p>Após definir a estrtura e os dados inicias, vamos salvar o DataFrame no formato Delta, configurar para que os dados sejam sobrescritos, e informar onde os dados devem ser salvos</p>
+<p>Após definir a estrutura e os dados inicias, vamos salvar o DataFrame no formato Delta, configurar para que os dados sejam sobrescritos, e informar onde os dados devem ser salvos.</p>
 <pre><code class="language-python">( 
     df
     .write
@@ -553,7 +553,7 @@ df.show(truncate=False)
 )
 </code></pre>
 <h2 id="insert">INSERT</h2>
-<p>Definição dos novos dados a serem inseridos</p>
+<p>Definição dos novos dados a serem inseridos.</p>
 <pre><code class="language-python">new_data = [
     (&quot;4&quot;,&quot;PRODUTO_A&quot;, &quot;MARCA_A&quot;, &quot;CATEGORIA_A&quot;, 50.00, 60),
     (&quot;5&quot;,&quot;PRODUTO_B&quot;, &quot;MARCA_B&quot;, &quot;CATEGORIA_B&quot;, 150.00, 90),
@@ -564,7 +564,7 @@ df_new = spark.createDataFrame(data=new_data, schema=schema)
 
 deltaTable = DeltaTable.forPath(spark, &quot;./data/PRODUTOS&quot;)
 </code></pre>
-<p>Operação de marge entra o DataFrame já existente, e o criado acima</p>
+<p>Operação de marge entra o DataFrame já existente, e o criado acima.</p>
 <pre><code class="language-python">(
     deltaTable.alias(&quot;dados_atuais&quot;)
     .merge(
@@ -577,11 +577,11 @@ deltaTable = DeltaTable.forPath(spark, &quot;./data/PRODUTOS&quot;)
 )
 </code></pre>
 <h2 id="delete">DELETE</h2>
-<p>Operação de deletar com base no ID do produto</p>
+<p>Operação de deletar com base no ID do produto.</p>
 <pre><code class="language-python">deltaTable.delete(&quot;ID_PRODUTO = 4&quot;)
 </code></pre>
 <h2 id="update">UPDATE</h2>
-<p>Operação de atualizar o preço produto com base no seu ID</p>
+<p>Operação de atualizar o preço do produto com base no seu ID.</p>
 <pre><code class="language-python">deltaTable.update(&quot;ID_PRODUTO = 2&quot;, set = { &quot;PRECO_PRODUTO&quot;: &quot;400.00&quot; })
 </code></pre>
 <h2 id="exibir-o-estado-atual-da-tabela">Exibir o estado atual da tabela</h2>
