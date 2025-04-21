@@ -2,7 +2,7 @@
 
 Projeto desenvolvido para demonstração do Apache Spark Local (pyspark) gravando arquivos no formato Apache Iceberg e Apache Delta Lake, também de forma local.
 
-Necessário possuir Python na versão 3.9, e Java na versão 8. Recomendado possuir sistema Linux para execução do projeto.
+Necessário possuir Python na versão 3.12, e Java na versão 8. Recomendado possuir sistema Linux para execução do projeto.
 
 Projeto Python inicializado com o [Poetry](https://github.com/python-poetry/poetry).
 
