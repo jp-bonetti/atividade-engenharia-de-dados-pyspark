@@ -8,17 +8,22 @@ Projeto python inicializado com o [Poetry](https://github.com/python-poetry/poet
 
 Comandos utilizados para setup do ambiente:
 
-```bash copy
+```bash
 poetry init
 poetry add pyspark=3.4.2 delta-spark=2.4.0 jupyterlab
 poetry shell
 jupyter-lab
 ```
 
-Os exemplos de código pyspark/python para instanciar o Spark, bem como criar e manipular uma tabela Apache Iceberg e Apache Delta Lake, estão no arquivo `iceberg.ipynb` e `delta-lake.ipynb`, respectivamente.
+Os exemplos de código pyspark/python para instanciar o Spark, bem como criar e manipular uma tabela Apache Iceberg e Apache Delta Lake, 
+foram fetios com base nos arquivos `iceberg.ipynb` e `delta-lake.ipynb`, respectivamente, no seguinte repositório:
+
+```bash
+git clone https://github.com/jp-bonetti/atividade-engenharia-de-dados-pyspark
+```
 
 A cada nova execução dos notebooks, apague a pasta data.
 
 ## Diagrama ER
 
-![Diagrama ER](../pyspark.drawio.png)
+![Diagrama ER](https://raw.githubusercontent.com/jp-bonetti/atividade-engenharia-de-dados-pyspark/refs/heads/main/pyspark.drawio.png)
