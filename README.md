@@ -6,17 +6,24 @@ Necessário possuir Python na versão 3.12, e Java na versão 8. Recomendado pos
 
 Projeto Python inicializado com o [Poetry](https://github.com/python-poetry/poetry).
 
-Comandos utilizados para setup do ambiente:
+## Instalação do projeto:
 
 ```bash copy
-poetry init
-poetry add pyspark=3.4.2 delta-spark=2.4.0 jupyterlab
+git clone https://github.com/jp-bonetti/atividade-engenharia-de-dados-pyspark.git
+
+cd atividade-engenharia-de-dados-pyspark
+
+poetry install
+
 poetry shell
+
 jupyter-lab
 ```
 
-Os exemplos de código pyspark/python para instanciar o Spark, bem como criar e manipular uma tabela Apache Iceberg e Apache Delta Lake, estão no arquivo `iceberg.ipynb` e `delta-lake.ipynb`, respectivamente.
+Dentro da pasta notebook, estão os exemplos de código Pyspark/Python para instanciar o Spark, bem como criar e manipular uma tabela Apache Iceberg e Apache Delta Lake, no arquivo `iceberg.ipynb` e `delta-lake.ipynb`, respectivamente.
 
 A cada nova execução dos notebooks, apague a pasta data.
 
 Documentação MKDocs disponível em: https://jp-bonetti.github.io/atividade-engenharia-de-dados-pyspark/
+
+Autor: [João Paulo Sigieski Bonetti](https://github.com/jp-bonetti)
